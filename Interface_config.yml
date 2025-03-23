@@ -1,0 +1,16 @@
+---
+- name: Viewing interface configurations on all routers
+  hosts: all
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Runs show ip interface brief command
+      ios_command:
+        commands:
+          - show ip interface brief
+      register: int_output
+
+    - name: Display results
+      debug:
+        var: int_output.stdout_lines
