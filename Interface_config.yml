@@ -1,6 +1,6 @@
 ---
 - name: Viewing interface configurations on all routers
-  hosts: all
+  hosts: "{{ router_name }}"
   gather_facts: no
   connection: network_cli
 
