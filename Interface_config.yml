@@ -7,8 +7,7 @@
   tasks:
     - name: Runs show ip interface brief command
       ios_command:
-        commands:
-          - show ip interface brief
+        commands: "{{ router_command }}"
       register: int_output
 
     - name: Display results
